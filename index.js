@@ -11,21 +11,57 @@ const songs = [
     { title: "Come and Get Your Love", artist: "Redbone", genre: "Rock" },
     { title: "I'm Not in Love", artist: "10cc", genre: "Pop" },
     { title: "Fooled Around and Fell in Love", artist: "Elvin Bishop", genre: "Rock" },
+    { title: "No Air", artist: "Jordin Sparks & Chris Brown", genre: "R&B" },
+    { title: "Sure Thing", artist: "Miguel", genre: "R&B" },
+    { title: "Over You", artist: "Daughtry", genre: "Rock" },
+    { title: "Use Somebody", artist: "Kings of Leon", genre: "Rock" },
+    { title: "Selfish", artist: "Justin Timberlake", genre: "Pop" },
     // Feel free to add even more songs
 ];
 
 
 // Object containing each Guardian's preferred genre
 const guardians = {
-    "Star-Lord": "Rock",
-    "Gamora": "Pop",
+    StarLord: "Rock",
+    Gamora: "Pop",
     // Add preferences for Drax, Rocket, and Groot
+    Drax: "R&B",
+    Rocket: "Rock",
+    Groot: "Pop"
 };
+
+// Reference to playlist element in HTML
+const playlists = document.getElementById("playlists")
 
 // Function to generate playlist based on preferred genre
 function generatePlaylist(guardians, songs) {
-    // Use the map() function to create playlists for each Guardian
-    // Your code here
+    
+    for (let guardian in guardians) { //loops through guardians object
+
+        //Filters songs array for songs that match the guardian's preferred genre
+        const preferredSongs = songs
+            .filter((song) => { 
+                return song.genre === guardians[guardian]
+            })
+             
+
+        //Creates the containers to display the guardian's songs
+        const container = document.createElement("div")
+        container.id = "playlist"
+        playlists.appendChild(container)
+        const name = document.createElement("h2")
+        name.textContent = `${guardian}'s Playlist`
+        container.appendChild(name)
+    
+        //Maps through the preferredSongs array created above to display each guardian's preferred songs
+        const songList = preferredSongs.map((song) => {
+            const songItem = document.createElement("p")
+            songItem.innerHTML = `
+                <span id="song-title">${song.title}</span> by ${song.artist}
+            `
+            container.appendChild(songItem)
+        })
+    }
 }
 
 // Call generatePlaylist and display the playlists for each Guardian
