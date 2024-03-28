@@ -16,7 +16,6 @@ const songs = [
     { title: "Over You", artist: "Daughtry", genre: "Rock" },
     { title: "Use Somebody", artist: "Kings of Leon", genre: "Rock" },
     { title: "Selfish", artist: "Justin Timberlake", genre: "Pop" },
-    // Feel free to add even more songs
 ];
 
 
@@ -24,7 +23,6 @@ const songs = [
 const guardians = {
     StarLord: "Rock",
     Gamora: "Pop",
-    // Add preferences for Drax, Rocket, and Groot
     Drax: "R&B",
     Rocket: "Rock",
     Groot: "Pop"
@@ -39,16 +37,17 @@ function generatePlaylist(guardians, songs) {
     for (let guardian in guardians) { //loops through guardians object
 
         //Filters songs array for songs that match the guardian's preferred genre
-        const preferredSongs = songs
-            .filter((song) => { 
-                return song.genre === guardians[guardian]
-            })
+        const preferredSongs = songs.filter((song) => {
+            return song.genre === guardians[guardian]
+        })
              
 
         //Creates the containers to display the guardian's songs
         const container = document.createElement("div")
         container.id = "playlist"
         playlists.appendChild(container)
+
+        //Creates headings for the guardian's playlist
         const name = document.createElement("h2")
         name.textContent = `${guardian}'s Playlist`
         container.appendChild(name)
