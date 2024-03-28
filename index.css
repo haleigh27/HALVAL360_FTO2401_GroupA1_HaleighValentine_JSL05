@@ -14,7 +14,7 @@ h1 {
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Text shadow for headings */
 }
 
-.playlist {
+#playlist {
     margin: 20px;
     padding: 20px; /* Increased padding */
     background-color: #6A5ACD; /* Purple background for playlists */
@@ -23,17 +23,17 @@ h1 {
     box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2); /* Box shadow for playlists */
 }
 
-.song {
+#song {
     margin: 10px 0; /* Increased margin */
 }
 
-.song-title {
+#song-title {
     font-weight: bold;
     color: #FFD700; /* Gold color for song titles */
     text-decoration: underline; /* Underline effect for song titles */
 }
 
-.song-title:hover {
+#song-title:hover {
     text-decoration: none; /* Remove underline on hover */
     color: #00FF00; /* Green color on hover */
 }
