@@ -21,11 +21,11 @@ const songs = [
 
 // Object containing each Guardian's preferred genre
 const guardians = {
-    StarLord: "Rock",
-    Gamora: "Pop",
-    Drax: "R&B",
-    Rocket: "Rock",
-    Groot: "Pop"
+    "Star-Lord": "Rock",
+    "Gamora": "Pop",
+    "Drax": "R&B",
+    "Rocket": "Rock",
+    "Groot": "Pop"
 };
 
 // Reference to playlist element in HTML
