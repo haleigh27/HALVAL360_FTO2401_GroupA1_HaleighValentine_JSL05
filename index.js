@@ -34,14 +34,14 @@ const playlists = document.getElementById("playlists");
 // Function to generate playlist based on preferred genre
 function generatePlaylist(guardians, songs) {
     
-    for (let guardian in guardians) { //loops through guardians object
+    //loops through guardians object
+    for (let guardian in guardians) {
 
         //Filters songs array for songs that match the guardian's preferred genre
         const preferredSongs = songs.filter((song) => {
             return song.genre === guardians[guardian];
-        })
+        });
              
-
         //Creates the containers to display the guardian's songs
         const container = document.createElement("div");
         container.id = "playlist";
@@ -60,8 +60,8 @@ function generatePlaylist(guardians, songs) {
             `;
             container.appendChild(songItem);
         });
-    };
-};
+    }
+}
 
 // Call generatePlaylist and display the playlists for each Guardian
 generatePlaylist(guardians, songs);
